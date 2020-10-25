@@ -1,4 +1,3 @@
-console.log("fffffff");
 window.dom = {
   create(string) {
     const container = document.createElement("template");

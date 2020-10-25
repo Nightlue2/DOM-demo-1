@@ -15,7 +15,7 @@ function printCode(string) {
         resolve("success");
         window.clearInterval(id);
       }
-    }, 10);
+    }, 50);
   });
 }
 async function access() {
