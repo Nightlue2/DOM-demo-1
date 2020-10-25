@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
@@ -23,56 +23,104 @@
       .red {
         background: red;
       }
-      #showCode {
-        height: 100%;
-        width: 700px;
-        line-height: 32px;
-        font-size: 24px;
-        padding: 30px;
-        overflow-y: scroll;
-        word-break: normal;
-        display: flex;
+      @media (min-width: 580px) {
+        .wrapper {
+          display: flex;
+          height: 100vh;
+          flex-flow: wrap column;
+          align-content: flex-start;
+        }
+        #showCode {
+          height: 100%;
+          width: 700px;
+          line-height: 32px;
+          font-size: 24px;
+          padding: 30px;
+          overflow-y: scroll;
+          word-break: normal;
+          display: flex;
+        }
+        #showCode::-webkit-scrollbar {
+          display: none;
+        }
+        #showCode > span {
+          word-break: keep-all;
+        }
+        #showContent {
+          height: 100%;
+          width: calc(100vw - 700px);
+          flex-grow: 1;
+          background-color: #eee;
+          padding: 30px;
+          padding-top: 150px;
+        }
+        #square {
+          width: 230px;
+          height: 150px;
+          border: 1px solid #ffb73f;
+          border-radius: 8px;
+          font-size: 14px;
+          padding: 20px;
+        }
+        #round {
+          width: 50px;
+          height: 50px;
+          background-color: aquamarine;
+          border-radius: 50%;
+        }
       }
-      #showCode::-webkit-scrollbar {
-        display: none;
-      }
-      #showCode > span {
-        word-break: keep-all;
-      }
-      #showContent {
-        height: 100%;
-        width: calc(100vw - 700px);
-        flex-grow: 1;
-        background-color: #eee;
-        padding: 30px;
-        padding-top: 150px;
-      }
-      #square {
-        width: 230px;
-        height: 150px;
-        border: 1px solid #ffb73f;
-        border-radius: 8px;
-        font-size: 14px;
-        padding: 20px;
-      }
-      #round {
-        width: 50px;
-        height: 50px;
-        background-color: aquamarine;
-        border-radius: 50%;
+      @media (max-width: 580px) {
+        .wrapper {
+          display: flex;
+          height: 100vh;
+          flex-flow: wrap column;
+          justify-content: flex-start;
+        }
+        #showCode {
+          height: 60%;
+          width: 100%;
+          line-height: 32px;
+          font-size: 20px;
+          padding: 3vw;
+          overflow-y: scroll;
+          word-break: normal;
+          display: flex;
+        }
+        #showCode::-webkit-scrollbar {
+          display: none;
+        }
+        #showCode > span {
+          word-break: break-all;
+          width: 100%;
+          /* 宽度按照父元素的内容区width来算，而不是width加padding */
+        }
+        #showContent {
+          height: 40%;
+          width: 100%;
+          flex-grow: 1;
+          background-color: #eee;
+          padding: 30px;
+        }
+        #square {
+          width: 61vw;
+          height: 40vw;
+          border: 1px solid #ffb73f;
+          border-radius: 8px;
+          font-size: 14px;
+          padding: 6vw;
+        }
+        #round {
+          width: 13vw;
+          height: 13vw;
+          background-color: aquamarine;
+          border-radius: 50%;
+        }
       }
     </style>
   </head>
 
   <body>
-    <main
-      style="
-        display: flex;
-        height: 100vh;
-        flex-flow: wrap column;
-        align-content: flex-start;
-      "
-    >
+    <main class="wrapper">
       <div id="showCode"><span></span></div>
       <div id="showContent"></div>
     </main>

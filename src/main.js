@@ -1,53 +1,3 @@
-// document.createElement('div')
-// const div = dom.create("<div>newDiv</div>");
-
-// dom.after(test, div);
-
-// const div3 = dom.create('<div id="parent"></div>')
-// dom.wrap(test, div3)
-
-// const nodes = dom.empty(window.empty)
-// console.log(nodes)
-
-// dom.attr(test, 'title', 'Hi, I am Frank')
-// const title = dom.attr(test, 'title')
-// console.log(`title: ${title}`)
-
-// dom.text(test, '你好，这是新的内容')
-// dom.text(test)
-
-// dom.style(test, {border: '1px solid red', color: 'blue'})
-// console.log(dom.style(test, 'border'))
-// dom.style(test, 'border', '1px solid black')
-
-// dom.addClass(test, 'red')
-// dom.addClass(test, 'blue')
-// dom.removeClass(test, 'blue')
-// console.log(dom.hasClass(test,'blue'))
-
-// const fn = ()=>{
-//   console.log('点击了')
-// }
-// dom.on(test, 'click', fn)
-// dom.off(test, 'click', fn)
-
-// const testDiv = dom.find('#test')[0]
-// console.log(testDiv)
-// const test2 = dom.find('#test2')[0]
-// console.log(dom.find(test2,'.red' )[0])
-
-// console.log(dom.parent(test))
-
-// const s2 = dom.find('#s2')[0]
-// console.log(dom.siblings(s2))
-// console.log(dom.next(s2))
-// console.log(dom.previous(s2))
-
-// const t = dom.find('#travel')[0]
-// dom.each(dom.children(t), (n)=> dom.style(n, 'color', 'red'))
-
-// console.log(dom.index(s2))
-
 import "babel-polyfill";
 const codeArea = dom.pick("#showCode > span");
 const codeWrapper = dom.pick("#showCode");
@@ -65,7 +15,7 @@ function printCode(string) {
         resolve("success");
         window.clearInterval(id);
       }
-    }, 50);
+    }, 10);
   });
 }
 async function access() {
@@ -91,7 +41,7 @@ async function access() {
   await printCode(`dom.attr(square,'id')
   `);
   alert("正方形的id为：" + dom.attr(square, "id"));
-  await printCode(`dom.attr(square,'style','border:1px solid #81b9ff; //把正方形的边框改成蓝色')
+  await printCode(`dom.attr(square,'style','border:1px solid #81b9ff'); //把正方形的边框改成蓝色
   `);
   dom.attr(square, "style", "border:1px solid #81b9ff;");
   await printCode(`const round = dom.create("<div id='round'></div>")
